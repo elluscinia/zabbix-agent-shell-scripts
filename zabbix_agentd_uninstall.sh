@@ -1,6 +1,6 @@
 #!/bin/bash
-if [ -f /sbin/zabbix_agentd ]; then
-	rm /sbin/zabbix_agentd
+if [ -f /opt/zabbix_agentd ]; then
+	rm /opt/zabbix_agentd
 	echo 'delete /sbin/zabbix_agentd'
 else
 	echo 'can not delete /sbin/zabbix_agentd, file does not exists'

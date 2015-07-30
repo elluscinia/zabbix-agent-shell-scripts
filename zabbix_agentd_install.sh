@@ -1,11 +1,14 @@
 #!/bin/bash
-cp zabbix_agentd /sbin/
+groupadd zabbix
+useradd -g zabbix zabbix
+cp zabbix_agentd /opt/
 if [ -d /etc/zabbix ]; then
-	echo 'directory zabbix already exists'
+	echo 'directory /etc/zabbix already exists'
 else
 	mkdir /etc/zabbix/
-	echo 'directory zabbix was created'
+	echo 'directory /etc/zabbix was created'
 fi
 ./zabbix_agentd_conf.sh
 cp zabbix_agentd.conf /etc/zabbix
+echo 'zabbix_agentd.conf remove to /etc/zabbix/ directory'
 echo 'file installation was successful'
