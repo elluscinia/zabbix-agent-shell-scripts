@@ -1,8 +1,8 @@
 # zabbix-agent-shell-scripts
 
-*Shell скрипты для настройки конфигурационного файла и работы с Zabbix Agent active*
+*Shell скрипты для настройки конфигурационного файла и работы с Zabbix Agent.*
 
-Набор файлов и shell-скриптов предназначен для быстрой настройки и установки под Linux Zabbix Agent active.
+Набор файлов и shell-скриптов предназначен для быстрой настройки и установки под Linux Zabbix Agent.
 Запуск должен происходить с помощью sudo, но не под 'root'!
 
 **zabbix-agentd**
@@ -34,6 +34,9 @@
  - shell-скрипт, удаляющий все установленные ранее файлы для работы с агентом
 
 
-### предполагаемая последовательность действий в терминале Linux
-1. sudo ./zabbix_agentd_install.sh
-2. sudo ./zabbix_agentd_start.sh
+### Предполагаемая последовательность действий в терминале Linux
+**из директории, где располагаются файлы скриптов:**
+
+1. sudo find . -name 'zabbix_agentd_*' -exec chmod +x '{}' \;
+2. sudo ./zabbix_agentd_install.sh
+3. sudo ./zabbix_agentd_start.sh
